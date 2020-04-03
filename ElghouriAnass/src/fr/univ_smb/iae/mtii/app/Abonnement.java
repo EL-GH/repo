@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public class Abonnement {
 	private String dateDebut;
-	private int prix;
+	private double prix;
 	private ArrayList<Sport> sports = new ArrayList<Sport>();
 	
-	public Abonnement(String dateDebut, int prix) {
+	public Abonnement(String dateDebut) {
 		this.dateDebut = dateDebut;
-		this.prix = prix;
 	}
 	
 	public String getDateDebut() {
@@ -18,11 +17,16 @@ public class Abonnement {
 	public void setDateDebut(String dateDebut) {
 		this.dateDebut = dateDebut;
 	}
-	public int getPrix() {
+	public double getPrix() {
 		return prix;
 	}
-	public void setPrix(int prix) {
-		this.prix = prix;
+	
+	public void tarifs() {
+		double t = 0;
+		for(int i = 0; i < this.getSport().size(); i++) {
+			t = this.getSport().get(i).getTarif() + t;
+		}
+		System.out.println("le prix d'abonnement est : " + t + " Euros");
 	}
 	
 	public ArrayList<Sport> getSport() {
@@ -41,6 +45,7 @@ public class Abonnement {
 			System.out.println("sport pratiquer :");
 			for (Sport s : this.getSport())
 				s.sportInfo();
+				this.tarifs();
 	}
 	
 	
