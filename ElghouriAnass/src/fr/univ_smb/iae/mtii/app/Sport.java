@@ -3,13 +3,17 @@ package fr.univ_smb.iae.mtii.app;
 public class Sport {
 	
 	private String libelle;
-	private double tarif;
+	private int tarif;
 	private Entraineur entraineur;
 	
 	public Sport(String libelle, int tarif, Entraineur entraineur) {
 		this.libelle = libelle;
 		this.tarif= tarif;
 		this.entraineur = entraineur;
+	}
+	
+	public Sport(int tarif) {
+		this.tarif = tarif;
 	}
 	
 	public Sport() {
@@ -29,11 +33,11 @@ public class Sport {
 		this.entraineur = entraineur;
 	}
 	
-	public double getTarif() {
+	public int getTarif() {
 		return tarif;
 	}
 
-	public void setTarif(double tarif) {
+	public void setTarif(int tarif) {
 		this.tarif = tarif;
 	}
 

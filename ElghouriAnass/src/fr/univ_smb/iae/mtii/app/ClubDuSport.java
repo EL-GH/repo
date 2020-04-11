@@ -1,5 +1,12 @@
 package fr.univ_smb.iae.mtii.app;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.json.simple.JSONObject;
+
+import com.google.gson.Gson;
+
 
 public class ClubDuSport {
 	private ArrayList<Adherent> adherents = new ArrayList<Adherent>();
@@ -8,8 +15,18 @@ public class ClubDuSport {
 		return adherents;
 	}
 	
-	public void ajouterAdherent(Adherent a) {
+	public void ajouterAdherent(Adherent a) throws IOException {
 		this.getAdherents().add(a);
+		Gson json = new Gson();
+		
+		String response= json.toJson(a);
+//		System.out.println(response);
+		FileWriter file = new FileWriter("Adherent "+ a.getNom() +".json");
+		file.write(response);
+		file.flush();
+		file.close();
+		
+		
 	}
 	
 	public void listingDesAdherents() {
@@ -32,6 +49,7 @@ public class ClubDuSport {
 			return trouve;
 		}
 	
+	
 	public void infoAdherent(String a) {
 		try {
 				this.rechercherAdherent(a).afficherInfo();
@@ -53,8 +71,7 @@ public class ClubDuSport {
 		System.out.println(a + " a été désabonné avec succès"); }
 		else System.out.println("La personne que vous souhaitez désabonné n'existe pas !");
 	}
-	
-	
+
 	
 	
 }

@@ -1,8 +1,10 @@
 package fr.univ_smb.iae.mtii.app;
 
+import java.io.IOException;
+
 public class MonApp {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		ClubDuSport clubAnnecy; clubAnnecy = new ClubDuSport();
 		Entraineur entrai1, entrai2; entrai1 = new Entraineur("SEFRA", "Alex", 99, "Natation"); entrai2 = new Entraineur("ALARCON", "Slim", 98, "Football");
@@ -13,11 +15,12 @@ public class MonApp {
 		
 		clubAnnecy.ajouterAdherent(j);
 		clubAnnecy.ajouterAdherent(p);
+	//	clubAnnecy.infoAdherent("RICHAR");
 		
 	//	clubAnnecy.rechercherAdherent("RICHARD");
-		clubAnnecy.desabonner("GRIZO");
+	//	clubAnnecy.desabonner("GRIZO");
 		
-	//	clubAnnecy.listingDesAdherents();
+		clubAnnecy.listingDesAdherents();
 	//	clubAnnecy.infoAdherent("RICHRD");
 	
 		
