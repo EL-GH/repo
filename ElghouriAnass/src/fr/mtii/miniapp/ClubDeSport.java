@@ -1,4 +1,4 @@
-package fr.univ_smb.iae.mtii.app;
+package fr.mtii.miniapp;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,11 +8,21 @@ import org.json.simple.JSONObject;
 import com.google.gson.Gson;
 
 
-public class ClubDuSport {
+public class ClubDeSport {
+	
+	static ClubDeSport clubAnnecy = new ClubDeSport(); // Design Pattern Singleton
 	private ArrayList<Adherent> adherents = new ArrayList<Adherent>();
 	
 	public ArrayList<Adherent> getAdherents() {
 		return adherents;
+	}
+	
+	private ClubDeSport() {
+		
+	}
+	
+	public static ClubDeSport getInstance() {
+		return clubAnnecy;
 	}
 	
 	public void ajouterAdherent(Adherent a) throws IOException {
@@ -54,7 +64,7 @@ public class ClubDuSport {
 		try {
 				this.rechercherAdherent(a).afficherInfo();
 		} catch (NullPointerException e) {
-			System.err.println("Le nom que vous avez entrez n'est pas enregistrer au club !");
+			System.err.println("Ce nom n'est pas enregistrer au club !");
 		}
 	
 	}

@@ -1,4 +1,4 @@
-package fr.univ_smb.iae.mtii.app;
+package fr.mtii.miniapp;
 import java.util.ArrayList;
 
 
@@ -26,7 +26,6 @@ public class Abonnement {
 		for(int i = 0; i < this.getSport().size(); i++) {
 			t = this.getSport().get(i).getTarif() + t;
 		}
-		//System.out.println("le prix d'abonnement est : " + t + " Euros");
 		return t;
 	}
 	

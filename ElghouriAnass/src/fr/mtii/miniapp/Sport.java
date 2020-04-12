@@ -1,4 +1,4 @@
-package fr.univ_smb.iae.mtii.app;
+package fr.mtii.miniapp;
 
 public class Sport {
 	

@@ -1,4 +1,4 @@
-package fr.univ_smb.iae.mtii.app;
+package fr.mtii.miniapp;
 
 public abstract class Personne {
 	private String nom, prenom, email, ville;
@@ -8,6 +8,10 @@ public abstract class Personne {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.id = id;
+	}
+	
+	public Personne(String nom) {
+		this.nom = nom;
 	}
 	
 	public Personne() {
